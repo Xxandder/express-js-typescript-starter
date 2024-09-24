@@ -1,4 +1,4 @@
-const HTTPMethods = {
+const HTTPMethod = {
   HEAD: 'HEAD',
   GET: 'GET',
   POST: 'POST',
@@ -7,4 +7,4 @@ const HTTPMethods = {
   DELETE: 'DELETE'
 } as const;
 
-export { HTTPMethods };
+export { HTTPMethod };
