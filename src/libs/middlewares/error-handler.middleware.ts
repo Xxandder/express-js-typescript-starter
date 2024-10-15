@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { ErrorMessage } from '../enums/error-message.enum';
 import { IHTTPError } from '../exceptions/http-error.interface';
 
-export const exceptionHandler = (
+const exceptionHandler = (
   error: IHTTPError,
   req: Request,
   res: Response,
@@ -16,3 +16,5 @@ export const exceptionHandler = (
     .status(statusCode)
     .send({ statusCode, message });
 };
+
+export { exceptionHandler }
