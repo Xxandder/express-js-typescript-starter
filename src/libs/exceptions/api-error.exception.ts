@@ -11,6 +11,9 @@ abstract class ApiError extends CustomError{
 
         Object.setPrototypeOf(this, CustomError.prototype)
     }
+    serializeErrors() {
+        return [{message: this.message }]
+    }
 }
 
 export { ApiError };

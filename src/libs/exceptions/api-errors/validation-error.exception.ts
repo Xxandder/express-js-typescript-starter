@@ -1,5 +1,5 @@
-import { ErrorType, HTTPStatusCode } from '../enums/enums';
-import { ApiError } from './api-error.exception';
+import { ErrorType, HTTPStatusCode } from '../../enums/enums';
+import { ApiError } from '../api-error.exception';
 
 class ValidationError extends ApiError{
     errorCode = HTTPStatusCode.BadRequest;
