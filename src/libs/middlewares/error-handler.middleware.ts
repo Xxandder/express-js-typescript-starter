@@ -18,7 +18,7 @@ const exceptionHandler = (
   /// Functionality to send a message about critical error
   return res
   .status(HTTPStatusCode.InternalServerError)
-  .send({message: ErrorMessage.Generic});
+  .send({message: ErrorMessage.GENERIC});
  
 };
 
