@@ -1,4 +1,4 @@
-const HttpErrorType = {
+const ErrorType = {
     DATABASE_ERROR: 'DATABASE_ERROR',
     VALIDATION_ERROR: 'VALIDATION_ERROR',
     API_ERROR: 'API_ERROR',
@@ -10,4 +10,4 @@ const HttpErrorType = {
     INTERNAL_SERVER_ERROR: 'INTERNAL_SERVER_ERROR',
 }
 
-export  { HttpErrorType }
+export  { ErrorType }

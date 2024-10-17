@@ -1,10 +1,10 @@
-import { ErrorMessage, HttpErrorType } from "../enums/enums";
+import { ErrorMessage, ErrorType } from "../enums/enums";
 import { HTTPStatusCode } from "../enums/enums";
 import { ValuesOf } from "../types/value-of.type";
 import { CustomError } from "./custom-error.exception";
 
 class DatabaseConnectionError extends CustomError {
-    errorType: ValuesOf<typeof HttpErrorType> = HttpErrorType.DATABASE_ERROR;
+    errorType = ErrorType.DATABASE_ERROR;
 
     constructor() {
         super(ErrorMessage.DATABASE_CONNECTION_ERROR);
