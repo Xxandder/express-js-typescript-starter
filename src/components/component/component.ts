@@ -1,0 +1,1 @@
+export { componentRouter } from './component.routes'

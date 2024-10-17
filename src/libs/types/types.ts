@@ -1,0 +1,1 @@
+export { type ValuesOf } from './value-of.type';
