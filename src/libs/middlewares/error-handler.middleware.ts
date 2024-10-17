@@ -11,7 +11,10 @@ const exceptionHandler = (
   if(error instanceof ApiError){
     return res
       .status(error.errorCode)
-      .send(error.serializeErrors());
+      .send({
+        errorType: error.errorType,
+        errors: error.serializeErrors()
+    });
   }
   /// Functionality to send a message about critical error
   return res
