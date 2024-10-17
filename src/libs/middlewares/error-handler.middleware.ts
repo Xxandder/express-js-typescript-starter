@@ -1,20 +1,24 @@
 import { Request, Response, NextFunction } from 'express';
 import { ErrorMessage } from '../enums/error-message.enum';
-import { IHTTPError } from '../exceptions/http-error.interface';
+import { CustomError } from '../exceptions/http.exceptions';
+import { HTTPStatusCode } from '../enums/http-status-codes.enum';
 
 const exceptionHandler = (
-  error: IHTTPError,
-  req: Request,
+  error: Error,
+  _req: Request,
   res: Response,
   _next: NextFunction
 ) => {
 
-  const statusCode = error.statusCode || 500;
-  const message = error.message || ErrorMessage.Generic;
-
+  if(error instanceof CustomError){
+    return res
+      .status(error.errorCode)
+      .send(error.serializeErrors());
+  }
   return res
-    .status(statusCode)
-    .send({ statusCode, message });
+  .status(HTTPStatusCode.InternalServerError)
+  .send({message: ErrorMessage.Generic});
+ 
 };
 
-export { exceptionHandler }
+export { exceptionHandler };
