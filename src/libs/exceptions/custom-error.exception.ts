@@ -1,5 +1,4 @@
 import { ErrorType } from "../enums/enums"
-import { HTTPStatusCode } from "../enums/enums"
 import { ValuesOf } from "../types/value-of.type"
 
 abstract class CustomError extends Error{

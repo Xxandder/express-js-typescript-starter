@@ -1,6 +1,4 @@
 import { ErrorMessage, ErrorType } from "../enums/enums";
-import { HTTPStatusCode } from "../enums/enums";
-import { ValuesOf } from "../types/value-of.type";
 import { CustomError } from "./custom-error.exception";
 
 class DatabaseConnectionError extends CustomError {

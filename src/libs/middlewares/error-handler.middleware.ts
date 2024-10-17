@@ -1,8 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import { ErrorMessage } from '../enums/error-message.enum';
-import { CustomError } from '../exceptions/http.exceptions';
+import { ErrorMessage, ApiError } from '../exceptions/exceptions';
 import { HTTPStatusCode } from '../enums/http-status-codes.enum';
-import { ApiError } from '../exceptions/api-error.exception';
 
 const exceptionHandler = (
   error: Error,
