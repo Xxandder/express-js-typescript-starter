@@ -1,17 +1,16 @@
 import { HttpErrorType } from "../enums/enums"
 import { HTTPStatusCode } from "../enums/enums"
 import { ValuesOf } from "../types/value-of.type"
+import { CustomError } from "./custom-error.exception"
 
-abstract class CustomError extends Error{
-    abstract errorType: ValuesOf<typeof HttpErrorType>
+abstract class ApiError extends CustomError{
+    abstract errorCode: ValuesOf<typeof HTTPStatusCode>
 
     constructor(message: string){
         super(message)
 
         Object.setPrototypeOf(this, CustomError.prototype)
     }
-
-    abstract serializeErrors(): { message: string }[];
 }
 
-export { CustomError };
+export { ApiError };
